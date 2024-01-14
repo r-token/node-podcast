@@ -1,7 +1,7 @@
 {
-  "name": "podcast",
+  "name": "@r-token/podcast",
   "version": "2.0.1",
-  "description": "Podcast RSS feed generator. A really simple API to add Podcast-RSS feeds to any project.",
+  "description": "Podcast RSS feed generator. A really simple API to add Podcast-RSS feeds to any project. Forked from https://github.com/maxnowack/node-podcast",
   "main": "dist/cjs/index.js",
   "types": "dist/types/index.d.ts",
   "module": "dist/esm/index.js",
