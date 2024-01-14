@@ -24,7 +24,7 @@
   "licenses": [
     {
       "type": "MIT",
-      "url": "http://github.com/maxnowack/node-podcast/raw/master/LICENSE"
+      "url": "https://github.com/r-token/node-podcast/raw/master/LICENSE"
     }
   ],
   "keywords": [
@@ -34,18 +34,19 @@
     "feed",
     "nodejs"
   ],
-  "homepage": "http://github.com/maxnowack/node-podcast",
+  "homepage": "https://github.com/r-token/node-podcast",
   "author": "Max Nowack <max@unsou.de>",
   "contributors": [
-    "Max Nowack <max@unsou.de>"
+    "Max Nowack <max@unsou.de>",
+    "Ryan Token <ryantoken13@gmail.com>"
   ],
   "repository": {
     "type": "git",
-    "url": "http://github.com/maxnowack/node-podcast"
+    "url": "https://github.com/r-token/node-podcast"
   },
   "bugs": {
-    "mail": "max@unsou.de",
-    "url": "http://github.com/maxnowack/node-podcast/issues"
+    "mail": "ryantoken13@gmail.com",
+    "url": "https://github.com/r-token/node-podcast/issues"
   },
   "workspaces": [
     "example"
