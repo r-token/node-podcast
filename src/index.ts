@@ -106,13 +106,6 @@ export class Podcast {
     }
 
     customElements.push({
-      "itunes:owner": [
-        { "itunes:name": options.itunesOwner?.name || "" },
-        { "itunes:email": options.itunesOwner?.email || "" },
-      ],
-    });
-
-    customElements.push({
       "itunes:explicit": typeof options.itunesExplicit === "boolean" ? !!options.itunesExplicit : options.itunesExplicit || false,
     });
 
