@@ -52,11 +52,11 @@ export class Podcast {
     }
 
     if (typeof options.namespaces.podcast === "undefined") {
-      options.namespaces.podcast = true;
+      options.namespaces.podcast = false;
     }
 
     if (typeof options.namespaces.simpleChapters === "undefined") {
-      options.namespaces.simpleChapters = true;
+      options.namespaces.simpleChapters = false;
     }
 
     return options;
@@ -104,10 +104,18 @@ export class Podcast {
         "itunes:type": options.itunesType,
       });
     }
-
-    customElements.push({
-      "itunes:explicit": typeof options.itunesExplicit === "boolean" ? !!options.itunesExplicit : options.itunesExplicit || false,
-    });
+    
+    if (options.itunesExplicit !== null) {
+      if (options.itunesExplicit === true) {
+        customElements.push({
+          "itunes:explicit": "yes"
+        })
+      } else {
+        customElements.push({
+          "itunes:explicit": "no"
+        })
+      }
+    }
 
     if (options.itunesCategory) {
       const categories = buildITunesCategoryElements(options.itunesCategory);
@@ -170,9 +178,17 @@ export class Podcast {
         "itunes:summary": itemOptions.itunesSummary || itemOptions.description,
       });
     }
-    customElements.push({
-      "itunes:explicit": typeof itemOptions.itunesExplicit === "boolean" ? !!itemOptions.itunesExplicit : itemOptions.itunesExplicit || false,
-    });
+    if (itemOptions.itunesExplicit !== null) {
+      if (itemOptions.itunesExplicit === true) {
+        customElements.push({
+          "itunes:explicit": "yes"
+        })
+      } else {
+        customElements.push({
+          "itunes:explicit": "no"
+        })
+      }
+    }
     if (itemOptions.itunesDuration) {
       customElements.push({
         "itunes:duration": durationFormat(itemOptions.itunesDuration),
@@ -231,12 +247,12 @@ export class Podcast {
       ];
     }
 
-    if (this.options.namespaces?.simpleChapters && itemOptions.pscChapters) {
-      item.customElements = [
-        ...(item.customElements || []),
-        buildSimpleChaptersElement(itemOptions.pscChapters),
-      ];
-    }
+    // if (this.options.namespaces?.simpleChapters && itemOptions.pscChapters) {
+    //   item.customElements = [
+    //     ...(item.customElements || []),
+    //     buildSimpleChaptersElement(itemOptions.pscChapters),
+    //   ];
+    // }
 
     this.items.push(item as Item);
     return;
